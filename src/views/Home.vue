@@ -1,18 +1,49 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <CustomTable
+      border
+      :data="data"
+      :columns="columns"
+      :columnsProps="columnsProps"
+      @selection-change="selectionChange"
+    >
+      >
+      <template v-slot:expand="{ row }">
+        <section class="expand-detail">
+          {{ row }}
+        </section>
+      </template>
+
+      <template v-slot:slot>
+        <el-tag type="success">标签二</el-tag>
+      </template>
+    </CustomTable>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Data from '@/data'
+import CustomTable from '@/components/CustomTable'
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld
+    CustomTable
+  },
+  data() {
+    return {
+      data: Data.data,
+      columns: Data.columns,
+      columnsProps: {
+        width: 'auto'
+      }
+    }
+  },
+  methods: {
+    selectionChange(rows) {
+      console.log('selected', rows)
+    }
   }
-};
+}
 </script>
