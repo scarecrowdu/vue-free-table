@@ -13,8 +13,8 @@
           </template>
         </el-table-column>
 
-        <cl-column v-else v-bind="$attrs" :key="item.prop" :column="item">
-        </cl-column>
+        <free-column v-else v-bind="$attrs" :key="item.prop" :column="item">
+        </free-column>
       </template>
     </el-table>
 
@@ -23,14 +23,14 @@
 </template>
 
 <script>
-import ClColumn from './columu'
+import FreeColumn from './columu'
 import Pagination from '../Pagination'
 
 export default {
-  name: 'ClTable',
+  name: 'FreeTable',
   components: {
     Pagination,
-    ClColumn
+    FreeColumn
   },
   props: {
     data: Array,

@@ -1,12 +1,12 @@
 <template>
   <el-table-column v-bind="column" v-on="$listeners">
     <template slot="header" slot-scope="scope">
-      <cl-render
+      <free-render
         v-if="column.renderHeader"
         :scope="scope"
         :render="column.renderHeader"
       >
-      </cl-render>
+      </free-render>
       <span v-else>{{ scope.column.label }}</span>
     </template>
 
@@ -19,17 +19,17 @@
       >
       </component>
 
-      <cl-render v-else :scope="scope" :render="column.render"> </cl-render>
+      <free-render v-else :scope="scope" :render="column.render"> </free-render>
     </template>
   </el-table-column>
 </template>
 
 <script>
-import ClRender from './render'
+import FreeRender from './render'
 import CellForced from './forced'
 
 export default {
-  name: 'ClColumn',
+  name: 'FreeColumn',
   props: {
     column: {
       type: Object,
@@ -37,7 +37,7 @@ export default {
     }
   },
   components: {
-    ClRender
+    FreeRender
   },
   watch: {
     column: {
