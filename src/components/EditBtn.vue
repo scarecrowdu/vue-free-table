@@ -1,5 +1,5 @@
 <template>
-  <el-button size="mini" @click="todo">编辑..</el-button>
+  <el-button size="mini" @click="todo">编辑</el-button>
 </template>
 
 <script>

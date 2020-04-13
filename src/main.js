@@ -5,6 +5,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import Vuep from 'vuep'
+import 'vuep/dist/vuep.css'
+
+Vue.use(Vuep /*, { codemirror options } */)
+
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false
