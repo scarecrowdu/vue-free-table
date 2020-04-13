@@ -1,4 +1,4 @@
-# vue-table
+# vue-free-table
 
 > 基于element ui table二次封装，几乎支持原table所有的功能。
 
