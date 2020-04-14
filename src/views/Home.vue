@@ -27,6 +27,17 @@
     </div>
 
     <div class="example-table-box">
+      <p>支持树形数据</p>
+      <free-table
+        border
+        :data="data"
+        :column="componentColumn"
+        row-key="id"
+        :tree-props="{ children: 'children', hasChildren: 'hasChildren' }"
+      ></free-table>
+    </div>
+
+    <div class="example-table-box">
       <p>支持selection/index/expand</p>
       <free-table border :data="data" :column="typesColumn"></free-table>
     </div>

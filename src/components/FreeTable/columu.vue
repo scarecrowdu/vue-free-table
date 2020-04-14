@@ -5,8 +5,7 @@
         v-if="column.renderHeader"
         :scope="scope"
         :render="column.renderHeader"
-      >
-      </free-render>
+      />
       <span v-else>{{ scope.column.label }}</span>
     </template>
 
@@ -16,10 +15,18 @@
         v-bind="getCptBind(scope, column)"
         v-on="column.listeners"
         :is="column.component"
-      >
-      </component>
+      />
 
-      <free-render v-else :scope="scope" :render="column.render"> </free-render>
+      <!-- 嵌套表格 -->
+      <template v-else-if="column.children">
+        <free-column
+          v-for="col in column.children"
+          :key="col.prop"
+          :column="col"
+        />
+      </template>
+
+      <free-render v-else :scope="scope" :render="column.render" />
     </template>
   </el-table-column>
 </template>

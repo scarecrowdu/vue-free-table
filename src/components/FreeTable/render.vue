@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'ClRender',
+  name: 'FreeRender',
   functional: true,
   props: {
     scope: Object,

@@ -1,6 +1,6 @@
-import ClTable from './table.vue'
+import FreeTable from './table.vue'
 
-ClTable.install = function(Vue) {
-  Vue.component(ClTable.name, ClTable)
+FreeTable.install = function(Vue) {
+  Vue.component(FreeTable.name, FreeTable)
 }
-export default ClTable
+export default FreeTable

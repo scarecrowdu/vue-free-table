@@ -1,5 +1,5 @@
 <template>
-  <div class="cl-table">
+  <div class="free-table">
     <el-table ref="elTable" :data="data" v-bind="$attrs" v-on="$listeners">
       <template v-for="item in tbColumns">
         <el-table-column
@@ -13,12 +13,13 @@
           </template>
         </el-table-column>
 
-        <free-column v-else v-bind="$attrs" :key="item.prop" :column="item">
-        </free-column>
+        <free-column v-else v-bind="$attrs" :key="item.prop" :column="item" />
       </template>
     </el-table>
 
-    <pagination v-if="pagination" v-bind="$attrs" v-on="$listeners" />
+    <template v-if="pagination">
+      <pagination v-if="data.length > 0" v-bind="$attrs" v-on="$listeners" />
+    </template>
   </div>
 </template>
 
