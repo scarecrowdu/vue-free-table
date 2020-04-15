@@ -12,6 +12,23 @@
       :limit.sync="params.limit"
       @pagination="getList"
     ></free-table>
+
+    <el-dialog title="收货地址" :visible.sync="dialogVisible">
+      <el-form :model="editForm" label-width="100px">
+        <el-form-item label="名称">
+          <el-input v-model="editForm.title" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="作者" v-if="editForm.author">
+          <el-input v-model="editForm.author.loginname"></el-input>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false"
+          >确 定</el-button
+        >
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -41,7 +58,26 @@ export default {
           prop: 'action',
           label: '操作',
           render: (h, scope) => {
-            return <span>{scope.row.author.loginname}</span>
+            return (
+              <div>
+                <el-button
+                  type="text"
+                  size="small"
+                  class="el-icon-edit"
+                  onClick={() => this.openDialog(scope)}
+                >
+                  编辑
+                </el-button>
+                <el-button
+                  type="text"
+                  size="small"
+                  class="el-icon-delete"
+                  onClick={() => this.delHandle(scope)}
+                >
+                  删除
+                </el-button>
+              </div>
+            )
           }
         }
       ],
@@ -52,7 +88,9 @@ export default {
         tab: 'share',
         page: 1,
         limit: 10
-      }
+      },
+      editForm: {},
+      dialogVisible: false
     }
   },
   mounted() {
@@ -67,6 +105,16 @@ export default {
       this.data = data.data || []
       this.total = 500
       this.loading = false
+    },
+
+    async delHandle({ row }) {
+      console.log(row)
+      await this.$message.success('这是一条删除成功提示')
+    },
+
+    openDialog({ row }) {
+      this.editForm = Object.assign({}, row)
+      this.dialogVisible = true
     }
   }
 }
