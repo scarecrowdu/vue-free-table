@@ -1,10 +1,16 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <el-container>
+      <el-aside width="150px">
+        <div id="nav">
+          <router-link to="/">例子展示</router-link>
+          <router-link to="/scene">场景使用</router-link>
+        </div>
+      </el-aside>
+      <el-main>
+        <router-view />
+      </el-main>
+    </el-container>
   </div>
 </template>
 
@@ -18,9 +24,11 @@
 }
 
 #nav {
-  padding: 20px;
+  margin-top: 30px;
 
   a {
+    display: block;
+    padding: 20px 25px;
     font-weight: bold;
     color: #2c3e50;
 
