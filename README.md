@@ -1,11 +1,10 @@
 # vue-free-table
 
-> 基于 element ui table 二次封装，几乎支持原 table 所有的功能。
+> 基于 element ui table 二次封装，几乎支持原 table 所有的功能
 
 ### 文档使用
 
 **特性**
-
 - 以 element-ui table 为基础进行二次封装，减少代码量
 - 继承 element-ui table 组件的参数及事件
 - 支持render渲染
