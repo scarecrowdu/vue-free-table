@@ -3,6 +3,7 @@
 > 基于 element ui table 二次封装，几乎支持原 table 所有的功能
 
 ### 文档使用
+**[DEMO预览](https://dodov.github.io/vue-free-table/index.html#/)**
 
 **特性**
 - 以 element-ui table 为基础进行二次封装，减少代码量
