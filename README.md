@@ -121,8 +121,6 @@ export default {
 </script>
 ```
 
-![预览](./preview.png)
-
 ### 构建命令
 
 ```bash
