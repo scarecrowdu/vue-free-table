@@ -8,6 +8,11 @@
 
 - 以 element-ui table 为基础进行二次封装，减少代码量
 - 继承 element-ui table 组件的参数及事件
+- 支持render渲染
+- 支持slot插槽
+- 支持组件引入
+- 支持树形数据
+- 支持分页功能
 
 **文档**
 
@@ -116,6 +121,8 @@ export default {
 }
 </script>
 ```
+
+![预览](./preview.png)
 
 ### 构建命令
 

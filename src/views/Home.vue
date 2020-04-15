@@ -32,6 +32,7 @@
         border
         :data="data"
         :column="componentColumn"
+        default-expand-all
         row-key="id"
         :tree-props="{ children: 'children', hasChildren: 'hasChildren' }"
       ></free-table>
