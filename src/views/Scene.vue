@@ -1,5 +1,7 @@
 <template>
   <div class="free-table-container">
+    <free-button @search="search"></free-button>
+
     <free-table
       v-loading="loading"
       style="min-height: 50vh"
@@ -33,11 +35,13 @@
 </template>
 
 <script>
+import FreeButton from '@/components/FreeButton'
 import FreeTable from '@/components/FreeTable'
 import axios from 'axios'
 
 export default {
   components: {
+    FreeButton,
     FreeTable
   },
   data() {
@@ -115,6 +119,9 @@ export default {
     openDialog({ row }) {
       this.editForm = Object.assign({}, row)
       this.dialogVisible = true
+    },
+    search() {
+      alert(12)
     }
   }
 }
