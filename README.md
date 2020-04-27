@@ -1,5 +1,4 @@
 # vue-free-table
-
 > 基于 element ui table 二次封装，几乎支持原 table 所有的功能
 
 ### 文档使用
