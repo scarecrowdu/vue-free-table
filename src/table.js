@@ -9,7 +9,28 @@ export default {
         { label: '省份', prop: 'province' },
         { label: '市区', prop: 'city' },
         { label: '地址', prop: 'address', width: 300 },
-        { label: '邮编', prop: 'zip' }
+        { label: '邮编', prop: 'zip' },
+        {
+          label: 'v-model',
+          render: (h, scope) => {
+            return h('input', {
+              on: {
+                input(event) {
+                  scope.row.name = event.target.value
+                }
+              },
+              domProps: {
+                value: scope.row.name
+              },
+              style: {
+                width: '100%',
+                minHeight: '30px',
+                color: 'red',
+                border: '1px solid #ddd'
+              }
+            })
+          }
+        }
       ],
 
       renderColumn: [
